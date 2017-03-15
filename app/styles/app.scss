@@ -1,0 +1,58 @@
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+.event-note{
+  width: 500px;
+  padding:0;
+  margin:0;  
+}
+
+.ember-modal-dialog {
+  padding: 0;
+  margin:0;
+}
+
+.modal-content{
+  height: 300px;  
+}
+
+.modal-title {
+  color: #ffffff;
+  text-align: center;
+}
+
+.modal-header {
+  background-color: #0568ae;
+  border-color: #0568ae;
+  height: 40px;
+  margin: 0;
+}
+
+.modal-body {
+    background: transparent;    
+    box-shadow: none;
+    border: none;
+	padding:20px;
+	margin: 10px;
+}
+
+button.btn {
+  float: right;
+  background-color: transparent;
+  margin:5px;
+}
+
+.close {
+  color: #fff;
+  opacity: 1;
+  margin-right:5px;
+}
+
+.inputError{
+	color: red;
+	padding: 3px;
+}
+
+.tips{
+	font-size: 9px;
+}

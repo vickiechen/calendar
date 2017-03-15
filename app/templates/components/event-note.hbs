@@ -1,0 +1,57 @@
+<div class="modal-content">
+    <button class="btn close" aria-hidden="true" {{action 'closeDialog'}}>x</button>
+	
+	<div class="modal-header">
+		<h4 class="modal-title center-text"> Event </h4>
+	</div><!-- modal-header -->
+	
+	<div class="modal-body event-note">		
+		<div class="row">
+			<div class="col-md-5">
+				<b>Start Time:</b>
+			</div>
+			<div class="col-md-7">		
+				{{event.start}}
+			</div>
+		</div>	
+		
+		<div class="row">
+			<div class="col-md-5">
+				<b>End Time:</b>
+			</div>
+			<div class="col-md-7">		
+				{{event.end}}
+			</div>
+		</div>
+		
+		<div class="row ">
+			<div class="col-md-5">
+				<b>Name:</b>
+			</div>
+			<div class="col-md-7">		
+				{{input value=name}}
+			</div>
+		</div>					
+		
+		<div class="row">
+			<div class="col-md-5">
+				<b>Phone Number:</b>
+			</div>
+			<div class="col-md-7">			
+				{{input value=phone}}	
+				<span class='tips'>XXX-XXX-XXXX</span>
+			</div>
+		</div>	
+		
+		<div class="inputError">{{inputError}}</div>		
+	</div><!-- modal-body -->
+	
+	<div class="modal-footer">
+		<button class="btn btn-primary" {{action 'clearEnter'}}>Clear</button>
+		<button class="btn btn-primary" {{action 'cancel'}}>Cancel</button>
+		{{#if validfields}}
+			<button class="btn btn-primary" {{action 'saveEvent'}}>Submit</button>
+		{{/if}}		
+	</div><!-- modal-footer -->
+	
+</div><!-- /.modal-content -->
