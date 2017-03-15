@@ -15,12 +15,24 @@ export default Ember.Component.extend({
 		},
 		
 		//pop modal to add a new event
-		dayClick(event){ 			
+		dayClick(event){ 
+			let minutes = moment(event).minute();
+			let start = '';
+			let end = '';
+			
+			if(minutes >0){ //round down to hour
+				start = moment(event).subtract(minutes, 'm').format();
+				end = moment(start).add(1,'h').format();
+			}else{
+				start = moment(event).format();
+				end = moment(event).add(1,'h').format();
+			}
+			
 			let eventID = this.get('eventID');
 			let selectedEvent = {
 				id: eventID,
-				start: moment(event).format(),
-				end: moment(event).add(1,'h').format()
+				start: start,
+				end: end
 			};	
 			
 			this.set('selectedevent', selectedEvent);
