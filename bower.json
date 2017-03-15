@@ -1,5 +1,5 @@
 {
-  "name": "calendar",
+  "name": "vcalendar",
   "dependencies": {
     "fullcalendar": "^3.2.0"
   }

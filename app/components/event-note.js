@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
 	name: '',
@@ -21,7 +22,7 @@ export default Ember.Component.extend({
 	didReceiveAttrs: function() { 
 	 	this._super(...arguments);	
 		let event = this.get('event');
-		
+	
 		if(event !== undefined){
 			this.set('start', moment(event.start).format('MM-DD-YYYY H:mm:ss'));
 			this.set('end', moment(event.end).format('MM-DD-YYYY H:mm:ss'));

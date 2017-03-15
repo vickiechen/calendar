@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
 	isShowingModal: false,
@@ -8,13 +9,13 @@ export default Ember.Component.extend({
 	actions: {
 		
 		//pop modal to edit the selected event
-		eventClick(event, jsEvent, view){			
+		eventClick(event){			
 			this.set('selectedevent', event );
 			this.toggleProperty('isShowingModal');					
 		},
 		
 		//pop modal to add a new event
-		dayClick(event, jsEvent, view){ 			
+		dayClick(event){ 			
 			let eventID = this.get('eventID');
 			let selectedEvent = {
 				id: eventID,
@@ -58,7 +59,7 @@ export default Ember.Component.extend({
 		removeEvent(eventID){
 			let events = this.get('events');
 			if(eventID !==''){ 				
-				events.forEach(function(e, index, events){  console.log(e.id, eventID, index)
+				events.forEach(function(e, index, events){  
 					if(e.id === eventID){ 
 						events.splice(index,1);
 						return false;
