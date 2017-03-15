@@ -23,10 +23,10 @@ export default Ember.Component.extend({
 		let event = this.get('event');
 		
 		if(event !== undefined){
-			this.set('start', event.start);
-			this.set('end', event.end);
+			this.set('start', moment(event.start).format('MM-DD-YYYY H:mm:ss'));
+			this.set('end', moment(event.end).format('MM-DD-YYYY H:mm:ss'));
 			this.set('name', (event.name!==undefined?event.name:'') );
-			this.set('phone', (event.phone!==undefined?event.phone:''));	
+			this.set('phone', (event.phone!==undefined?event.phone:''));			
 		}
 	},	
 	isValidPhoneNumer: function (inputext){
@@ -52,16 +52,24 @@ export default Ember.Component.extend({
 				name: this.get('name'),
 				phone: this.get('phone'),
 				start: event.start,
-				end: event.end
+				end: event.end,
+				id : event.id,
+				title: this.get('name') + " " + this.get('phone'),
+				backgroundColor: 'red'
 			};		
-			this.router.send("saveEvent", saveEvent );
-			this.router.send("closeDialog");		
+			this.sendAction("saveEvent", saveEvent );
+			this.sendAction("closeDialog");		
+		},
+		removeEvent: function (){  	
+			let event = this.get('event');
+			this.sendAction("removeEvent", event.id );
+			this.sendAction("closeDialog");		
 		},
 		closeDialog: function (){  
-			this.router.send("closeDialog");			
+			this.sendAction("closeDialog");			
 		},
 		cancel: function (){
-			this.router.send("closeDialog");		
+			this.sendAction("closeDialog");		
 		},
 		clearEnter: function (){
 			this.set('name','');			

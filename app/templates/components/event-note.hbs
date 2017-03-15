@@ -2,7 +2,7 @@
     <button class="btn close" aria-hidden="true" {{action 'closeDialog'}}>x</button>
 	
 	<div class="modal-header">
-		<h4 class="modal-title center-text"> Event </h4>
+		<h4 class="modal-title center-text"> Event Schedule </h4>
 	</div><!-- modal-header -->
 	
 	<div class="modal-body event-note">		
@@ -10,8 +10,8 @@
 			<div class="col-md-5">
 				<b>Start Time:</b>
 			</div>
-			<div class="col-md-7">		
-				{{event.start}}
+			<div class="col-md-5">		
+				{{start}}
 			</div>
 		</div>	
 		
@@ -19,8 +19,8 @@
 			<div class="col-md-5">
 				<b>End Time:</b>
 			</div>
-			<div class="col-md-7">		
-				{{event.end}}
+			<div class="col-md-5">		
+				{{end}}
 			</div>
 		</div>
 		
@@ -28,7 +28,7 @@
 			<div class="col-md-5">
 				<b>Name:</b>
 			</div>
-			<div class="col-md-7">		
+			<div class="col-md-5">		
 				{{input value=name}}
 			</div>
 		</div>					
@@ -37,7 +37,7 @@
 			<div class="col-md-5">
 				<b>Phone Number:</b>
 			</div>
-			<div class="col-md-7">			
+			<div class="col-md-5">			
 				{{input value=phone}}	
 				<span class='tips'>XXX-XXX-XXXX</span>
 			</div>
@@ -47,11 +47,12 @@
 	</div><!-- modal-body -->
 	
 	<div class="modal-footer">
-		<button class="btn btn-primary" {{action 'clearEnter'}}>Clear</button>
-		<button class="btn btn-primary" {{action 'cancel'}}>Cancel</button>
+		<button class="btn btn-primary" {{action 'clearEnter'}}>Clear Fields</button>	
+		<button class="btn btn-primary" {{action 'removeEvent'}}>Delete Event</button>
 		{{#if validfields}}
 			<button class="btn btn-primary" {{action 'saveEvent'}}>Submit</button>
 		{{/if}}		
+		<button class="btn btn-primary" {{action 'cancel'}}>Cancel</button>
 	</div><!-- modal-footer -->
 	
 </div><!-- /.modal-content -->

@@ -1,0 +1,19 @@
+<div id="myCalendar">
+	{{
+		full-calendar 
+		events = events 
+		eventClick = (action "eventClick") 
+		dayClick = (action "dayClick") 
+		defaultView = "agendaWeek"
+		maxTime = "17:00:00"
+		minTime = "09:00:00"
+		slotDuration = "00:60:00"
+		allDaySlot = false		
+	}}
+</div>
+
+{{#if isShowingModal}}
+	{{#modal-dialog targetAttachment="center" translucentOverlay=true}}
+		{{event-note event=selectedevent closeDialog='closeDialog' saveEvent='saveEvent' removeEvent='removeEvent'}}
+	{{/modal-dialog}}
+{{/if}}

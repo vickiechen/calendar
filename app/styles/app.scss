@@ -1,49 +1,48 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 
-.event-note{
-  width: 500px;
-  padding:0;
-  margin:0;  
-}
-
-.ember-modal-dialog {
-  padding: 0;
-  margin:0;
-}
-
-.modal-content{
-  height: 300px;  
-}
-
-.modal-title {
-  color: #ffffff;
-  text-align: center;
-}
-
+/* Modal Header */
 .modal-header {
-  background-color: #0568ae;
-  border-color: #0568ae;
-  height: 40px;
-  margin: 0;
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
 }
 
-.modal-body {
-    background: transparent;    
-    box-shadow: none;
-    border: none;
-	padding:20px;
-	margin: 10px;
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+	width: 400px;
 }
 
 button.btn {
-  float: right;
   background-color: transparent;
   margin:5px;
+  color: white;
 }
 
 .close {
-  color: #fff;
+  float: right;
+  color: #fefefe;
   opacity: 1;
   margin-right:5px;
 }
@@ -54,5 +53,9 @@ button.btn {
 }
 
 .tips{
-	font-size: 9px;
+	font-size: 8px;
+}
+
+.fc-slats tr {
+	height: 50px;
 }
