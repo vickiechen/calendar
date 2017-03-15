@@ -1,7 +1,7 @@
 {
-  "name": "vcalendar",
+  "name": "calendar",
   "version": "0.0.0",
-  "description": "Small description for vcalendar goes here",
+  "description": "Small description for calendar goes here",
   "license": "MIT",
   "author": "",
   "directories": {
