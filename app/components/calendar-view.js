@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default Ember.Component.extend({
 	isShowingModal: false,
-	selectedevent:{},
+	selectedevent:{},	
 	events: [],
 	eventID: 1, 
 	actions: {
